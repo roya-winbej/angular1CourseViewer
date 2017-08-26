@@ -10,10 +10,27 @@ angular.module('app', [
     Common,
     Components
   ])
-  .config(($locationProvider) => {
+  .config(($locationProvider, $stateProvider, $urlRouterProvider) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('authors', {
+        url: '/authors',
+        component: 'authorList'
+      })
+      .state('courses', {
+        url: '/courses',
+        component: 'courseList'
+      })
+      .state('home', {
+        url: '/',
+        component: 'home'
+      });
+
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
 

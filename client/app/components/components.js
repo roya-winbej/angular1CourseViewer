@@ -1,13 +1,17 @@
 import angular from 'angular';
-import courseViewerModule from './course-viewer/course-viewer';
 import userStatusModule from './userStatus/userStatus';
 import mainNavigatorModule from './mainNavigator/mainNavigator';
+import homeModule from './home/home';
+import courseListModule from './course/courseList/courseList';
+import authorListModule from './author/authorList/authorList';
 
 
 let componentModule = angular.module('app.components', [
-  courseViewerModule,
   userStatusModule,
-  mainNavigatorModule
+  mainNavigatorModule,
+  homeModule,
+  courseListModule,
+  authorListModule,
 ]).name;
 
 export default componentModule;
