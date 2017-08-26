@@ -24,7 +24,7 @@ angular.module('app', [
       })
       .state('courses', {
         url: '/courses',
-        component: 'courseList'
+        component: 'course'
       })
       .state('home', {
         url: '/',
